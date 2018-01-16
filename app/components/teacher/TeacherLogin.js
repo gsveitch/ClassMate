@@ -45,6 +45,7 @@ export default class TeacherLogin extends React.Component {
         user_last_name: user.Last_name,
         user_email: user.email,
       });
+      this.props.navigation.navigate('TeacherDashboard'); //<---- TEMP for dev of teacher dash
       axios.post(`${SERVER_URI}/login`, { idtoken: token })
         .then((res) => {
           console.log(res.data);
